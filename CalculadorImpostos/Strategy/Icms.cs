@@ -6,10 +6,18 @@ using System.Threading.Tasks;
 
 namespace CalculadorImpostos.Strategy
 {
-    public class ICMS : IImposto
+    public class ICMS : Imposto
     {
-        public double Calcula(Orcamento orcamento)
+        public ICMS(Imposto outroImposto) : base(outroImposto) { }
+
+        public ICMS()
         {
+            this.OutroImposto = null;
+        }
+
+        public override double Calcula(Orcamento orcamento)
+        {
+           
             return orcamento.Valor * 0.1;
         }
     }

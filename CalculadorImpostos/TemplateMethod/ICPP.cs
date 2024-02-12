@@ -8,6 +8,8 @@ namespace CalculadorImpostos.TemplateMethod
 {
     public class ICPP : TemplateDeImpostoCondicional
     {
+        public ICPP(Imposto outroImposto) : base(outroImposto) { }
+
         protected override bool DeveUsarMaximaTaxacao(Orcamento orcamento)
         {
             return orcamento.Valor >= 500;

@@ -6,9 +6,15 @@ using System.Threading.Tasks;
 
 namespace CalculadorImpostos.TemplateMethod
 {
-    public abstract class TemplateDeImpostoCondicional : IImposto
+    public abstract class TemplateDeImpostoCondicional : Imposto
     {
-        public double Calcula(Orcamento orcamento)
+        protected TemplateDeImpostoCondicional()
+        {
+            this.OutroImposto = null; 
+        }
+        protected TemplateDeImpostoCondicional(Imposto outroImposto) : base(outroImposto) { }
+
+        public override double Calcula(Orcamento orcamento)
         {
             if (DeveUsarMaximaTaxacao(orcamento))
             {

@@ -6,9 +6,16 @@ using System.Threading.Tasks;
 
 namespace CalculadorImpostos.Strategy
 {
-    public class ICCC : IImposto
+    public class ICCC : Imposto
     {
-        public double Calcula(Orcamento orcamento)
+
+        public ICCC(Imposto outroImposto) : base(outroImposto) { }
+        public ICCC()
+        {
+            this.OutroImposto = null;
+        }
+
+        public override double Calcula(Orcamento orcamento)
         {
             var valorOrcamento = orcamento.Valor;
             double valorImposto = 0.0;

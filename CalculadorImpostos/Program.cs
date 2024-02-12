@@ -1,41 +1,21 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using CalculadorImpostos;
-using CalculadorImpostos.ChainOfResponsability;
+using CalculadorImpostos.Strategy;
 
-//Console.WriteLine("Calculador de Imposto");
-
-
-//var ICMS = new ICMS();
-//var ISS = new ISS();
-//var ICCC = new ICCC();
-
-//var orcamento = new Orcamento(3001.0);
-//CalculadorDeImpostos calculador = new CalculadorDeImpostos();
-
-//// Calculando o ISS
-//calculador.RealizaCalculo(orcamento, ISS);
-
-//// Calculando o ICMS
-//calculador.RealizaCalculo(orcamento, ICMS);
-
-//// Calculando o ICCC;
-//calculador.RealizaCalculo(orcamento, ICCC);
+Imposto impostoSimples = new ISS();
+Imposto impostoComplexo = new ISS(new ICMS());
+Imposto impostoComplexo2 = new ICMS(new ICCC(new ISS()));
+Orcamento orcamento = new Orcamento(1000.0);
 
 
-Console.WriteLine("Calculador de Descontos");
+double valorSimples = impostoSimples.Calcula(orcamento);
 
-CalculadorDeDescontos calculador = new CalculadorDeDescontos();
+double valor = impostoComplexo.Calcula(orcamento);
 
-Orcamento orcamento = new Orcamento(270.0);
-orcamento.AdicionaItem(new Item("CANETA", 20.0));
-orcamento.AdicionaItem(new Item("LAPIS", 250.0));
-//orcamento.AdicionaItem(new Item("APAGADOR", 50.0));
-//orcamento.AdicionaItem(new Item("CADERNO", 250.0));
-//orcamento.AdicionaItem(new Item("MOCHILA", 750.0));
-//orcamento.AdicionaItem(new Item("ESTOJO", 250.0));
+double valor2 = impostoComplexo2.Calcula(orcamento);
 
-double desconto = calculador.Calcula(orcamento);
+Console.WriteLine($"Imposto  Simples: {valorSimples}");
+Console.WriteLine($"Imposto  Complexo: {valor}");
+Console.WriteLine($"Imposto2 Complexo: {valor2}");
+Console.ReadKey();
 
-Console.WriteLine(desconto);
-
-Console.ReadLine();

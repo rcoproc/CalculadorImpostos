@@ -8,6 +8,8 @@ namespace CalculadorImpostos.TemplateMethod
 {
     public class IHIT : TemplateDeImpostoCondicional
     {
+        public IHIT(Imposto outroImposto) : base(outroImposto) { }
+
         protected override bool DeveUsarMaximaTaxacao(Orcamento orcamento)
         {
             IList<String> noOrcamento = new List<String>();
