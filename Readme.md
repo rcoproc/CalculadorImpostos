@@ -1,4 +1,4 @@
-﻿﻿# Design Pattern Strategy
+﻿﻿# Design Pattern Strategy, Chain of Responsabilit, Template Method
 ### Projeto: CalculadorImpostos
 ### Linguagem: csharp dotnet 6.0
 ### Autor: Ricardo Oliveira
@@ -17,6 +17,7 @@ Arquivo de Startup
 
 Classes de Strategy
 
+CalculadorDeImpostos
 ___
 
 ### Impostos
@@ -27,6 +28,12 @@ ___
 
 3. ICCC
 
+
+Classes de Chain Of Responsability
+___
+
+CalculadorDeDescontos
+
 ### Descontos
 
 1. DescontoPorCincoItens
@@ -34,4 +41,23 @@ ___
 2. DescontoPorMaisDeQuinhentosReais
 
 3. DescontoPorVendaCasada
+
+4. SemDescontos
+
+
+Classes de TemplateMethod
+---
+
+TemplateDeIpostoCondicional
+
+Pasta /Relatorio
+
+### Impostos
+
+1. ICPP
+
+2. IHIT
+
+3. IKCV
+
 

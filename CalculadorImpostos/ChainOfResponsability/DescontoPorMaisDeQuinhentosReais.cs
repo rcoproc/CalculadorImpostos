@@ -4,17 +4,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CalculadorImpostos 
+namespace CalculadorImpostos.ChainOfResponsability
 {
-    public class DescontoPorCincoItens : IDesconto
+    public class DescontoPorMaisDeQuinhentosReais : IDesconto
     {
         public IDesconto Proximo { get; set; }
 
         public double Desconta(Orcamento orcamento)
         {
-            if (orcamento.Itens.Count > 5)
+            if (orcamento.Valor > 500)
             {
-                return orcamento.Valor * 0.1;
+                return orcamento.Valor * 0.07;
             }
             else
             {

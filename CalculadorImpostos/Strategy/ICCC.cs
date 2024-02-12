@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CalculadorImpostos
+namespace CalculadorImpostos.Strategy
 {
     public class ICCC : IImposto
     {
@@ -13,15 +13,16 @@ namespace CalculadorImpostos
             var valorOrcamento = orcamento.Valor;
             double valorImposto = 0.0;
             if (valorOrcamento < 1000.0)
-            { 
-                valorImposto = (valorOrcamento * 0.05);
-            } else if ((valorOrcamento >= 1000) && (valorOrcamento<= 3000.0))
             {
-                valorImposto = (valorOrcamento * 0.07);
+                valorImposto = valorOrcamento * 0.05;
+            }
+            else if (valorOrcamento >= 1000 && valorOrcamento <= 3000.0)
+            {
+                valorImposto = valorOrcamento * 0.07;
             }
             else
             {
-                valorImposto = ((valorOrcamento * 0.08) + 30.00);
+                valorImposto = valorOrcamento * 0.08 + 30.00;
             }
             Console.WriteLine($"Imposto ICCC = {valorImposto}");
             return valorImposto;

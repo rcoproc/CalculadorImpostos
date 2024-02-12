@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CalculadorImpostos
+namespace CalculadorImpostos.ChainOfResponsability
 {
     internal class DescontoPorVendaCasada : IDesconto
     {
@@ -24,7 +24,7 @@ namespace CalculadorImpostos
             return existe("LAPIS", orcamento) && existe("CANETA", orcamento);
         }
 
-        private bool existe(String nomeDoItem, Orcamento orcamento)
+        private bool existe(string nomeDoItem, Orcamento orcamento)
         {
             foreach (Item item in orcamento.Itens)
             {
