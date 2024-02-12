@@ -10,10 +10,7 @@ namespace CalculadorImpostos.Strategy
     {
 
         public ICCC(Imposto outroImposto) : base(outroImposto) { }
-        public ICCC()
-        {
-            this.OutroImposto = null;
-        }
+        public ICCC() : base() { }
 
         public override double Calcula(Orcamento orcamento)
         {
