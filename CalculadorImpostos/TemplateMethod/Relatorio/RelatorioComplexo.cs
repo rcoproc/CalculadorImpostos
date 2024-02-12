@@ -21,7 +21,7 @@ namespace CalculadorImpostos.TemplateMethod.Relatorio
             Console.WriteLine(DateTime.Now);
         }
 
-        protected void override Corpo(IList<Conta> contas)
+        protected override void Corpo(IList<Conta> contas)
         {
             foreach (Conta c in contas)
             {
