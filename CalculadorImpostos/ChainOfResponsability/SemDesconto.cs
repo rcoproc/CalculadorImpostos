@@ -4,13 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CalculadorImpostos
+namespace CalculadorImpostos.ChainOfResponsability
 {
     public class SemDesconto : IDesconto
     {
         public IDesconto Proximo { get; set; }
 
-        public Double Desconta(Orcamento orcamento)
+        public double Desconta(Orcamento orcamento)
         {
             return 0;
         }
