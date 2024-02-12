@@ -6,6 +6,8 @@
 
 ## Template Method
 
+## Decorator
+
 
 ## Projeto: CalculadorImpostos
 
@@ -75,3 +77,14 @@ Pasta /Relatorio
 3. IKCV
 
 
+### Classes de Decorator
+
+**Program.cs**
+
+#### Impostos
+
+1. ISS
+
+
+2. ICMS
+3. ICPP
