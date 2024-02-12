@@ -1,4 +1,11 @@
-﻿# Design Pattern Strategy, Chain of Responsabilit, Template Method
+﻿# Design Patterns
+
+## Strategy
+
+## Chain of Responsability 
+
+## Template Method
+
 
 ## Projeto: CalculadorImpostos
 
@@ -19,7 +26,8 @@ Arquivo de Startup
 
 **Program.cs**
 
-Classes de Strategy
+
+### Classes de Strategy
 
 CalculadorDeImpostos
 ___
@@ -33,12 +41,13 @@ ___
 3. ICCC
 
 
-Classes de Chain Of Responsability
+
+### Classes de Chain Of Responsability
 ___
 
 CalculadorDeDescontos
 
-### Descontos
+#### Descontos
 
 1. DescontoPorCincoItens
 
@@ -48,7 +57,8 @@ CalculadorDeDescontos
 
 4. SemDescontos
 
-Classes de TemplateMethod
+
+### Classes de TemplateMethod
 
 ---
 
@@ -56,7 +66,7 @@ TemplateDeIpostoCondicional
 
 Pasta /Relatorio
 
-### Impostos
+#### Impostos
 
 1. ICPP
 
