@@ -1,7 +1,11 @@
-﻿﻿# Design Pattern Strategy, Chain of Responsabilit, Template Method
-### Projeto: CalculadorImpostos
+﻿# Design Pattern Strategy, Chain of Responsabilit, Template Method
+
+## Projeto: CalculadorImpostos
+
 ### Linguagem: csharp dotnet 6.0
+
 ### Autor: Ricardo Oliveira
+
 ### Data Inicial: Fevereiro/2024
 
 
@@ -44,8 +48,8 @@ CalculadorDeDescontos
 
 4. SemDescontos
 
-
 Classes de TemplateMethod
+
 ---
 
 TemplateDeIpostoCondicional
