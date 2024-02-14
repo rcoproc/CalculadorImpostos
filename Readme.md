@@ -1,5 +1,7 @@
 ﻿# Design Patterns
 
+## State
+
 ## Strategy
 
 ## Chain of Responsability 
