@@ -1,5 +1,7 @@
 ﻿# Design Patterns
 
+## Observer
+
 ## Builder
 
 ## Strategy
@@ -28,8 +30,21 @@ Arquivo de Startup
 
 **Program.cs**
 
+### Classes do Observer
 
-### Classe do Builder
+Quando o acoplamento da nossa classe está crescendo, ou quando temos diversas ações diferentes a serem executadas após um determinado processo, podemos implementar o Observer.
+
+Ele permite que diversas ações sejam executadas de forma transparente à classe principal, reduzindo o acoplamento entre essas ações, facilitando a manutenção e evolução do código.
+___
+
+1. AcoesAposGerarNota
+2. EnviadorDeEmail
+3. EnviadorSms
+4. GravadorNotaFiscalDao
+5. Multiplicador
+
+
+### Classes do Builder
 
 Sempre que tivermos um objeto complexo de ser criado, que possui diversos atributos, ou que possui uma lógica de criação complicada, podemos esconder tudo isso em um Builder.
 

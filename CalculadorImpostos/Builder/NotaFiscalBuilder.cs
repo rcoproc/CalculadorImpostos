@@ -1,4 +1,5 @@
 ﻿using CalculadorImpostos;
+using DesignPatterns.Observer;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,9 +18,18 @@ namespace DesignPatterns.Builder
         private IList<ItemDaNota> todosItens = new List<ItemDaNota>();
         private String Observacoes;
 
-        public NotaFiscalBuilder()
+        private IList<AcoesAposGerarNota> todasAcoesASeremExecutadas;
+
+        public NotaFiscalBuilder(IList<AcoesAposGerarNota>? lista)
         {
             this.Data = DateTime.Now;
+            if (lista != null)
+                this.todasAcoesASeremExecutadas = lista;
+        }
+
+        public void AdicionarAcao(AcoesAposGerarNota acao)
+        {
+            this.todasAcoesASeremExecutadas.Add(acao);
         }
 
         public NotaFiscalBuilder ParaEmpresa(String razaoSocial)
@@ -57,7 +67,14 @@ namespace DesignPatterns.Builder
 
         public NotaFiscal constroi()
         {
-            return new NotaFiscal(RazaoSocial, Cnpj, Data, ValorTotal, Impostos, todosItens, Observacoes);
+            var notaFiscal = new NotaFiscal(RazaoSocial, Cnpj, Data, ValorTotal, Impostos, todosItens, Observacoes);
+
+            foreach(var acao in this.todasAcoesASeremExecutadas)
+            {
+                acao.Executa(notaFiscal);
+            }
+
+            return notaFiscal;
         }
     }
 
